@@ -98,17 +98,13 @@ gulp.task('create', function() {
 });
 
 function createNewDir(name, templateDirPath, targetDirPath) {
-    console.log(name);
-    console.log(templateDirPath);
-    console.log(targetDirPath);
-    console.log(!fs.existsSync);
     !fs.existsSync(targetDirPath) && mkdirp(targetDirPath, function(){
         gulp.src(templateDirPath)
             .pipe(replace({
                 patterns: [
                     {
                     match: 'name',
-                    replacement: name + 'Page'
+                    replacement: name
                     }
                 ]
             }))
