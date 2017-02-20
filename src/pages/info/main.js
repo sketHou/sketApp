@@ -3,24 +3,26 @@ import {Text, View, TextInput,} from 'react-native';
 import styles from './style.js'
 
 export default class indexPage extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-        <View style={styles.tabbar}>
-          <Text  style={styles.tabbartext}>menu bar</Text>
-        </View>
-      </View>
-    );
-  }
+	constructor(props) {
+		super(props);
+        this.state = {
+			text: ''
+		};
+	}
+	render() {
+		var _this = this;
+		this.setState({
+			text: _this.props.text
+		});
+		let text = _this.state.text;
+		return (
+			<View style={styles.container}>
+				<Text style={styles.info}>
+				This is info page
+				</Text>
+				<Text style={styles.info}>{text}</Text>
+			</View>
+		);
+	}
 }
 

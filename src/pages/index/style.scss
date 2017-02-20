@@ -1,7 +1,43 @@
+/**
+    Attention
+    scss编译成styleSheet js 文件但不能按照纯css的思路写；
+    与文字有关的样式只能写在与文字相关的组建里，不支持继承;
+    
+    1、不识别 displat: flex;
+    2、postion 只有两个属性 absoluet 和 relative;
+    3、text-decoration、text-showdow 不支持简写, text-showdow问题严重[!!!!! 需要修改gulp插件][已修改]
+    4、border 不支持简写 主要是RN的方式和css方式区别很大 [! 可以修改gulp插件]
+*/
+
 .container{
     flex: 1;
     background-color: #efefef;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 .welcome{
-    color: #f0f;
+    color: #333;
+    text-align: center;
+    font-size: 22;
+    padding: 20 20;
+    // border: 5 solid #333;
+    text-shadow-offset: 10 10; 
+}
+.instructions{
+    color: #333;
+    text-align: center;
+    font-size: 22;    
+}
+.button{
+    width: 200;
+    height: 50;
+    border-width: 1;
+    border-color: #333;
+    margin-top: 20; 
+}
+.buttonText{
+    text-align: center;
+    line-height: 46;
 }

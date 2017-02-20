@@ -14,7 +14,7 @@ import {
   Navigator
 } from 'react-native';
 
-import { indexPage } from './src/index.js';
+import { indexPage, infoPage} from './src/index.js';
 
 export default class sketApp extends Component {
   /**
@@ -37,15 +37,14 @@ export default class sketApp extends Component {
    * @returns {XML} 页面
    */
   renderScene(route, navigator) {
-    return <route.component navigator={navigator}  {...route.passProps} />;
+    return <route.component navigator={navigator}  {...route.params} />;
   }
 
 
   render() {
     return (
       <Navigator
-        style = {{ flex : 1 }}
-        initialRoute = {{ component : indexPage}}
+        initialRoute = {{ component : indexPage, name: 'index page'}}
         configureScene ={ this.configureScene }
         renderScene = { this.renderScene }/>
     );
