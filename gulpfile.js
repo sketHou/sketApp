@@ -97,6 +97,11 @@ gulp.task('create', function() {
     createNewDir(name, templateDirPath, targetDirPath);
 });
 
+/**
+ * @param  {String} name 文件里的需要替换的与文件名有关的名字
+ * @param  {String} templateDirPath 模版的路径
+ * @param  {String} targetDirPath 生成文件的路径
+ */
 function createNewDir(name, templateDirPath, targetDirPath) {
     !fs.existsSync(targetDirPath) && mkdirp(targetDirPath, function(){
         gulp.src(templateDirPath)
