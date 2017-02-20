@@ -3,9 +3,22 @@
     background-color: #efefef;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 .info{
     text-align: center;
     color: #333;
     font-size: 22;
+}
+
+.button{
+    width: 200;
+    height: 50;
+    border-width: 1;
+    border-color: #333;
+    margin-top: 20; 
+}
+.buttonText{
+    text-align: center;
+    line-height: 46;
 }

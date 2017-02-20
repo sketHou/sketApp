@@ -22,21 +22,27 @@ export default class indexPage extends Component {
 					Cmd+D or shake for dev menu
 				</Text>
 				<View style={styles.button}>
-					<TouchableOpacity onPress={this._pressButton.bind(this)}>
+					<TouchableOpacity onPress={() => this._pressButton('info')}>
 						<Text style={styles.buttonText}>跳转到info页</Text>
+					</TouchableOpacity>
+				</View>
+				<View style={styles.button}>
+					<TouchableOpacity onPress={() => this._pressButton('webview')}>
+						<Text style={styles.buttonText}>跳转到webview页</Text>
 					</TouchableOpacity>
 				</View>
 			</View>
 		);
 	}
 
-	_pressButton () {
+	_pressButton (pageName) {
+		console.log(pageName);
 		let navigator = this.props.navigator;
 		navigator.push({
-			name: 'info page',
-			component: pages.infoPage,
+			name: pageName + ' page',
+			component: pages[pageName + 'Page'],
 			params: {
-				text: 'hello info page'
+				text: 'hello ' + pageName + ' page'
 			}
 		})
 	}

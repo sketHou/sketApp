@@ -15,11 +15,7 @@ module.exports = StyleSheet.create({
         "paddingTop": 20,
         "paddingBottom": 20,
         "paddingRight": 20,
-        "paddingLeft": 20,
-        "textShadowOffset": {
-            "width": 10,
-            "height": 10
-        }
+        "paddingLeft": 20
     },
     "instructions": {
         "color": "#333",
