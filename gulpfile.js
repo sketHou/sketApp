@@ -1,10 +1,13 @@
 var gulp = require('gulp'),
     path = require('path'),
+    fs = require('fs'),
     gutil = require('gulp-util'),
     scss = require('gulp-sass'),
+    del = require('del'),
     watch = require('gulp-watch'),
     chalk = require('chalk'),
     mkdirp = require('mkdirp'),
+    replace = require('gulp-replace-task'),
     reactNativeStylesheetCss = require('gulp-react-native-stylesheet-css');
 
 var srcDir = 'src',
@@ -80,11 +83,35 @@ gulp.task('dev:watch', ['dev:init'], function() {
 gulp.task('create', function() {
     var pageName = params.create.page;
     var componentName = params.create.component;
-    console.log(pageName);
-    console.log(componentName);
     if( (!pageName) && (!componentName) ) {
         return console.log(chalk.red('[用法错误]') + ' npm run create -- --page:pageName 或是 npm run create -- --component:componentName ') 
     }
-    
+    var templateDirPath;
+    var targetDirPath;
+    var name;
+    if(pageName){
+        name = pageName;
+        targetDirPath = path.join(srcDir, 'pages', name);
+        templateDirPath = '.template/page/**/*'
+    }
+    createNewDir(name, templateDirPath, targetDirPath);
+});
 
-})
+function createNewDir(name, templateDirPath, targetDirPath) {
+    console.log(name);
+    console.log(templateDirPath);
+    console.log(targetDirPath);
+    console.log(!fs.existsSync);
+    !fs.existsSync(targetDirPath) && mkdirp(targetDirPath, function(){
+        gulp.src(templateDirPath)
+            .pipe(replace({
+                patterns: [
+                    {
+                    match: 'name',
+                    replacement: name + 'Page'
+                    }
+                ]
+            }))
+            .pipe(gulp.dest(targetDirPath))
+    });
+}

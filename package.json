@@ -17,12 +17,15 @@
     "lodash": "^4.17.4",
     "mkdirp": "^0.5.1",
     "react": "~15.4.0",
-    "react-native": "0.41.2"
+    "react-native": "0.41.2",
+    "sass": "^0.5.0"
   },
   "devDependencies": {
     "babel-jest": "18.0.0",
     "babel-preset-react-native": "1.9.1",
+    "del": "2.2.2",
     "gulp-react-native-stylesheet-css": "^1.4.4",
+    "gulp-replace-task": "^0.11.0",
     "jest": "18.1.0",
     "react-test-renderer": "~15.4.0"
   },
