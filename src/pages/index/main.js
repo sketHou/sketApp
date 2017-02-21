@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Text, View, TextInput, TouchableOpacity} from 'react-native';
+import {Text, View, TextInput, TouchableOpacity, Image} from 'react-native';
 import styles from './style.js';
 import {Actions} from 'react-native-router-flux'
 import * as pages from '../../index.js';
@@ -11,28 +11,23 @@ export default class indexPage extends Component {
 	}
 	render() {
 		return (
-			<View style={styles.container}>
+			<Image style={styles.container} source={require('../images/bg.jpg')}>
+
 				<Text style={styles.welcome}>
 					Welcome to React Native!
 				</Text>
 				<Text style={styles.instructions}>
-					To get started, edit index.ios.js
+					SKET APP
 				</Text>
 				<Text style={styles.instructions}>
-					Press Cmd+R to reload,{'\n'}
-					Cmd+D or shake for dev menu
+					Just for Test
 				</Text>
 				<View style={styles.button}>
 					<TouchableOpacity onPress={() => Actions.info({text: 'frmo index'})}>
-						<Text style={styles.buttonText}>跳转到info页</Text>
+						<Text style={styles.buttonText}>Upload Image</Text>
 					</TouchableOpacity>
 				</View>
-				<View style={styles.button}>
-					<TouchableOpacity onPress={() => Actions.webview({text: 'frmo index'})}>
-						<Text style={styles.buttonText}>跳转到webview页</Text>
-					</TouchableOpacity>
-				</View>
-			</View>
+			</Image>
 		);
 	}
 

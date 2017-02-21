@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import {Text, View, TextInput, TouchableOpacity} from 'react-native';
+import {Text, View, Image} from 'react-native';
 import styles from './style.js';
 import {Actions} from 'react-native-router-flux'
 import * as pages from '../../index.js';
+import Swiper from 'react-native-swiper';
 
 export default class indexPage extends Component {
 	constructor(props) {
@@ -21,17 +22,17 @@ export default class indexPage extends Component {
 		let text = _this.state.text;
 		return (
 			<View style={styles.container}>
-				<View >
-					<Text style={styles.info}>
-					This is info page
-					</Text>
-					<Text style={styles.info}>{text}</Text>
-				</View>
-				<View style={styles.button}>
-					<TouchableOpacity onPress={() => Actions.index({text: 'frmo info'})}>
-						<Text style={styles.buttonText}>跳回index页</Text>
-					</TouchableOpacity>
-				</View>
+				<Swiper style={styles.wrapper} height={200} showsButtons={true}>
+					<View style={styles.slide} >
+						<Image style={styles.image} source={require('./images/pic1.jpg')}></Image>
+					</View>
+					<View style={styles.slide} >
+						<Image style={styles.image} source={require('./images/pic2.jpg')}></Image>
+					</View>
+					<View style={styles.slide} >
+						<Image style={styles.image} source={require('./images/pic3.jpg')}></Image>
+					</View>
+				</Swiper>
 			</View>
 		);
 	}

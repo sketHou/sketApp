@@ -14,7 +14,7 @@ function TabIconFactory(nameString) {
 	return React.createClass({
 		render() {
 			return (
-				<Icon name={nameString} size={32} color={this.props.selected ? '#FFA07A' :'#333333'}></Icon>
+				<Icon name={nameString} size={32} color={this.props.selected ? '#FFA07A' :'#fff'}></Icon>
 			);
 		}		
 	})
@@ -28,7 +28,7 @@ export default class sketApp extends Component {
 
 	render() {
 		return <Router>
-			<Scene key="root" tabs={true} tabBarStyle={{backgroundColor: '#fff'}}>
+			<Scene key="root" tabs={true} tabBarStyle={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
 				<Scene key="index" icon={TabIconFactory('home')} component={Pages.indexPage} title="indexPage" initial={true} hideNavBar={true}></Scene>
 				<Scene key="info" icon={TabIconFactory('info-circle')} component={Pages.infoPage} title="infoPage" hideNavBar={false}></Scene>
 				<Scene key="webview" icon={TabIconFactory('link')} component={Pages.webviewPage} title="webviewPage" hideNavBar={false}></Scene>

@@ -1,12 +1,15 @@
 var React = require('react-native');
 var { StyleSheet } = React;
+var Dimensions = require('Dimensions');
+var { width, height } = Dimensions.get('window');
+
 module.exports = StyleSheet.create({
     "container": {
         "flex": 1,
-        "backgroundColor": "#efefef",
-        "flexDirection": "column",
-        "justifyContent": "center",
-        "alignItems": "center"
+        paddingTop: 64,
+        width: null,
+        width: null,
+        backgroundColor:'rgba(0,0,0,0.8)',
     },
     "info": {
         "textAlign": "center",
@@ -23,5 +26,18 @@ module.exports = StyleSheet.create({
     "buttonText": {
         "textAlign": "center",
         "lineHeight": 46
+    },
+    wrapper: {
+        backgroundColor: 'rgba(255,255,255,0)'
+    },
+    slide: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(255,255,255,0)',
+    },
+    image: {
+        width: width,
+        height: 498*width/750, 
     }
 });

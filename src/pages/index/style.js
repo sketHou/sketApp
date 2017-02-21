@@ -6,31 +6,39 @@ module.exports = StyleSheet.create({
         "backgroundColor": "#efefef",
         "flexDirection": "column",
         "justifyContent": "center",
-        "alignItems": "center"
+        "alignItems": "center",
+        width: null,
+        width: null,
+        backgroundColor:'rgba(0,0,0,0)'
     },
     "welcome": {
-        "color": "#333",
+        "color": "#fff",
         "textAlign": "center",
         "fontSize": 22,
         "paddingTop": 20,
         "paddingBottom": 20,
         "paddingRight": 20,
-        "paddingLeft": 20
+        "paddingLeft": 20,
+        backgroundColor:'rgba(0,0,0,0)'
     },
     "instructions": {
-        "color": "#333",
+        "color": "#fff",
         "textAlign": "center",
-        "fontSize": 22
+        "fontSize": 22,
+        backgroundColor:'rgba(0,0,0,0)'
     },
     "button": {
         "width": 200,
         "height": 50,
         "borderWidth": 1,
-        "borderColor": "#333",
-        "marginTop": 20
+        "borderColor": "#fff",
+        "marginTop": 40,
+        backgroundColor:'rgba(0,0,0,0)'
     },
     "buttonText": {
         "textAlign": "center",
-        "lineHeight": 46
+        "lineHeight": 46,
+        backgroundColor:'rgba(0,0,0,0)',
+        color: '#fff'
     }
 });
