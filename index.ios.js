@@ -5,110 +5,34 @@
  */
 
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Navigator
-} from 'react-native';
+import { AppRegistry , Text} from 'react-native';
+import {Scene, Router, NavBar, Actions, TabBar} from 'react-native-router-flux';
+import * as Pages from './src/index.js';
 
-import { indexPage, infoPage} from './src/index.js';
-
-export default class sketApp extends Component {
-  /**
-   * 配置场景动画
-   * @param route 路由
-   * @param routeStack 路由栈
-   * @returns {*} 动画
-   */
-  configureScene(route, routeStack) {
-    if (route.type == 'Bottom') {
-      return Navigator.SceneConfigs.FloatFromBottom; // 底部弹出
+class TabIcon extends Component {
+    render(){
+        return (
+            <Text style={{color: this.props.selected ? 'red' :'black'}}>{this.props.title}</Text>
+        );
     }
-    return Navigator.SceneConfigs.PushFromRight; // 右侧弹出
-  }
-
-  /**
-   * 使用动态页面加载
-   * @param route 路由
-   * @param navigator 导航器
-   * @returns {XML} 页面
-   */
-  renderScene(route, navigator) {
-    return <route.component navigator={navigator}  {...route.params} />;
-  }
-
-
-  render() {
-    return (
-      <Navigator
-        initialRoute = {{ component : indexPage, name: 'index page'}}
-        configureScene ={ this.configureScene }
-        renderScene = { this.renderScene }/>
-    );
-  }
 }
 
-/*
-  class Zipinput extends Component{
-    
-    constructor(props){
-      super(props);
-      this.state = {
-        zip: '',
-        forecast: {
-          main: 'clouds',
-          description: 'few clouds',
-          temp: 45.7
-        }
-      };
-    }
+function backButton() {
+	return <Text onPress={Actions.pop}>BACK</Text>
+}
 
-    _handleEvent(event){
-      let text = event.nativeEvent.text;
-      this.setState((state) => {
-        return {
-          zip: text
-        };
-      });
-    }
+export default class sketApp extends Component {
 
-    render(){
-      return(
-        <View>
-          <Text>zip {this.state.zip}</Text>
-          <TextInput style={styles.input} onSubmitEditing={(event) => this._handleEvent(event)} />
-        </View>
-      )
-    }
-  }
+	render() {
+		return <Router>
+			<Scene key="root" tabs={true} tabBarStyle={{backgroundColor: '#fff'}}>
+				<Scene key="index" icon={TabIcon} component={Pages.indexPage} title="indexPage" initial={true} hideNavBar={true}></Scene>
+				<Scene key="info" icon={TabIcon} component={Pages.infoPage} title="infoPage" hideNavBar={false}></Scene>
+				<Scene key="webview" icon={TabIcon} component={Pages.webviewPage} title="webviewPage" hideNavBar={false}></Scene>
+			</Scene>
+		</Router>
+	}
+}
 
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#F5FCFF',
-    },
-    welcome: {
-      fontSize: 20,
-      textAlign: 'center',
-      margin: 10,
-    },
-    instructions: {
-      textAlign: 'center',
-      color: '#333333',
-      marginBottom: 5,
-    },
-    input: {
-      fontSize: 20,
-      borderWidth: 2,
-      height: 40,
-      width: 100
-    }
-  });
-*/
 
 AppRegistry.registerComponent('sketApp', () => sketApp);

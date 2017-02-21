@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Text, View, TextInput, TouchableOpacity} from 'react-native';
-import styles from './style.js'
+import styles from './style.js';
+import {Actions} from 'react-native-router-flux'
 import * as pages from '../../index.js';
 
 export default class indexPage extends Component {
@@ -22,12 +23,12 @@ export default class indexPage extends Component {
 					Cmd+D or shake for dev menu
 				</Text>
 				<View style={styles.button}>
-					<TouchableOpacity onPress={() => this._pressButton('info')}>
+					<TouchableOpacity onPress={() => Actions.info({text: 'frmo index'})}>
 						<Text style={styles.buttonText}>跳转到info页</Text>
 					</TouchableOpacity>
 				</View>
 				<View style={styles.button}>
-					<TouchableOpacity onPress={() => this._pressButton('webview')}>
+					<TouchableOpacity onPress={() => Actions.webview({text: 'frmo index'})}>
 						<Text style={styles.buttonText}>跳转到webview页</Text>
 					</TouchableOpacity>
 				</View>
