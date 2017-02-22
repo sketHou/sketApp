@@ -33,6 +33,7 @@ export default class indexPage extends Component {
 						<Image style={styles.image} source={require('./images/pic3.jpg')}></Image>
 					</View>
 				</Swiper>
+				<Text style={styles.titlebox}>All Images</Text>
 			</View>
 		);
 	}

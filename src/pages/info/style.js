@@ -4,28 +4,28 @@ var Dimensions = require('Dimensions');
 var { width, height } = Dimensions.get('window');
 
 module.exports = StyleSheet.create({
-    "container": {
-        "flex": 1,
+    container: {
+        flex: 1,
         paddingTop: 64,
         width: null,
         width: null,
         backgroundColor:'rgba(0,0,0,0.8)',
     },
-    "info": {
-        "textAlign": "center",
-        "color": "#333",
-        "fontSize": 22
+    info: {
+        textAlign: 'center',
+        color: '#333',
+        fontSize: 22
     },
-    "button": {
-        "width": 200,
-        "height": 50,
-        "borderWidth": 1,
-        "borderColor": "#333",
-        "marginTop": 20
+    button: {
+        width: 200,
+        height: 50,
+        borderWidth: 1,
+        borderColor: '#333',
+        marginTop: 20
     },
-    "buttonText": {
-        "textAlign": "center",
-        "lineHeight": 46
+    buttonText: {
+        textAlign: 'center',
+        lineHeight: 46
     },
     wrapper: {
         backgroundColor: 'rgba(255,255,255,0)'
@@ -39,5 +39,14 @@ module.exports = StyleSheet.create({
     image: {
         width: width,
         height: 498*width/750, 
+    },
+    titlebox: {
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        height: 40,
+        color: '#fff',
+        lineHeight: 40,
+        textAlign: 'center',
+        fontSize: 26
+
     }
 });
