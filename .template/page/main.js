@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import styles from './style.js'
-import pages from '../../index.js';
+import styles from './style.js';
+import {Actions} from 'react-native-router-flux'
 
-export default class @@namePage extends Component {
+export default class @@name extends Component {
 	constructor(props) {
 		super(props);
         this.state = {};

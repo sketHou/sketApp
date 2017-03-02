@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {Text, View, TextInput, TouchableOpacity, Image} from 'react-native';
 import styles from './style.js';
-import {Actions} from 'react-native-router-flux'
-import * as pages from '../../index.js';
+import {Actions} from 'react-native-router-flux';
 
 export default class indexPage extends Component {
 	constructor(props) {
@@ -23,7 +22,7 @@ export default class indexPage extends Component {
 					Just for Test
 				</Text>
 				<View style={styles.button}>
-					<TouchableOpacity onPress={() => Actions.info({text: 'frmo index'})}>
+					<TouchableOpacity onPress={() => Actions.statusModal({hide:false, message: 'test'})}>
 						<Text style={styles.buttonText}>Upload Image</Text>
 					</TouchableOpacity>
 				</View>
